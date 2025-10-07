@@ -1,20 +1,20 @@
 
 if __name__ == "__main__":
     string = str(input()).lower()
+    unstripped_words = string.split(" ")
+    
+    word = [str(word.strip(',').strip('.').strip('!').strip('?').strip(':')).strip() \
+                     for word in unstripped_words if word != '-']
+    words = [i for i in word if i]
+    letters =  list(''.join(words))
+        
+    sorted_letters = sorted(letters, key = letters.count, reverse = True)
+    sorted_words = sorted(words, key = words.count, reverse = True)
+
+    set_letters = sorted(set(sorted_letters), key = sorted_letters.index)
+    set_words = sorted(set(sorted_words), key = sorted_words.index)
+
     if (len(string) > 0 and string.count(' ') != len(string)):
-        unstripped_words = string.split(" ")
-        
-        word = [str(word.strip(',').strip('.').strip('!').strip('?').strip(':')).strip() \
-                         for word in unstripped_words if word != '-']
-        words = [i for i in word if i]
-        letters =  list(''.join(words))
-        
-        sorted_letters = sorted(letters, key = letters.count, reverse = True)
-        sorted_words = sorted(words, key = words.count, reverse = True)
-
-        set_letters = sorted(set(sorted_letters), key = sorted_letters.index)
-        set_words = sorted(set(sorted_words), key = sorted_words.index)
-
         i = 1
         j = 1
 
