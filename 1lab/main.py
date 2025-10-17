@@ -2,7 +2,7 @@ import sys
 
 
 if __name__ == "__main__":
-    string = str(input()).lower()
+    string = input().lower()
     if (len(string) == 0 or string.count(' ') == len(string)):
         sys.exit()
 
