@@ -9,7 +9,7 @@ if __name__ == "__main__":
     unstripped_words = string.split(" ")
 
     word = [str(word.strip(',').strip('.').strip('!').strip('?').strip(':'))
-            .strip() for word in unstripped_words if word != '-']
+            for word in unstripped_words if word != '-']
     words = [i for i in word if i]
     letters = list(''.join(words))
 
